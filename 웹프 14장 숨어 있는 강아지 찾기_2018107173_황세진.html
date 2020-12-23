@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>강아지찾기</title>
+	<meta charset="utf-8">
+	<style>
+		#box1 {
+			position: absolute;
+			display: inline-block;
+			vertical-align: top;
+			width: 190px;
+			height: 500px;
+		}
+
+		#box2 {
+			left: 210px;
+			position: absolute;
+			width: 700px;
+			height: 400px;
+			background: yellowgreen;
+			margin: auto;
+		}
+
+		div.buttonBox {
+			border: 1px solid darkgreen;
+			background: antiquewhite;
+			margin-bottom: 5px;
+			padding: 1px;
+		}
+
+		td {
+			padding: 15px;
+		}
+	</style>
+</head>
+<body style="background: darkgreen;">
+	<h3 style="text-align: center; color: white;">숨어있는 강아지 찾기</h3>
+	<hr>
+	<br>
+	<div id="box1">
+		<div id="start" class="buttonBox" onclick="gameStart()" onmouseover="over(event)" onmouseout="out(event)">게임시작</div>
+		<div id="remains" class="buttonBox" onmouseover="over(event)" onmouseout="out(event)">남은 수 : 8</div>
+		<div id="fails" class="buttonBox" onmouseover="over(event)" onmouseout="out(event)">실패 수 : 0</div>
+		<div id="timer" class="buttonBox" onmouseover="over(event)" onmouseout="out(event)">시간 : 0</div>
+		<div id="guide" class="buttonBox" onmouseover="over(event)" onmouseout="out(event)">게임이 진행될 예정입니다.</div>
+	</div>
+		<table id="box2">
+		<script>
+			for(var i=0; i<3; i++) {
+				document.write("<tr>");
+				for(var j=0; j<8; j++) {
+					document.write("<td><img id='egg" + i + j + "' src='media/img1.gif' onclick='eggCheck(event)' onmouseover='over(event)' onmouseout='out(event)'></td>");
+				}
+				document.write("</tr>");
+			}
+		</script>
+		</table>
+
+		<audio id="bad" src="media/bad.mp3"></audio>
+		<audio id="chimes" src="media/chimes.mp3"></audio>
+		<audio id="clock" src="media/clock.mp3"></audio>
+		<audio id="ending" src="media/ending.mp3"></audio>
+		<audio id="tada" src="media/tada.mp3"></audio>
+
+		<iframe src="media/silence.mp3" style="display: none"></iframe>
+		<audio src="media/bgm.mp3" autoplay loop></audio>
+
+		
+		<script>
+			var timeId = null;
+			var seceond = 0;
+			var start = document.getElementById("start");
+			var gamming = false;
+			var gameover = null;
+			var remains = document.getElementById("remains");
+			var remainsNumber = 8;
+			var fails = document.getElementById("fails");
+			var failsNumber = 0;
+			var timer = document.getElementById("timer");
+			var guide = document.getElementById("guide");
+			var find = false;
+
+			var bad = document.getElementById("bad");
+			var chimes = document.getElementById("chimes");
+			var clock = document.getElementById("clock");
+			var ending = document.getElementById("ending");
+			var tada = document.getElementById("tada");
+
+			var numberOfDog = 0;
+			var eggs = new Array(3);
+			eggs[0] = new Array(8);
+			eggs[1] = new Array(8);
+			eggs[2] = new Array(8);
+		</script>
+
+		
+		<script>
+			function gameStart() {
+				if(gamming) return;
+				gamming = true;
+				start.innerHTML = "다시 게임시작";
+				remains.innerHTML = "남은 수 : 8";
+				remainsNumber = 8;
+				fails.innerHTML = "실패 수 : 0";
+				failsNumber = 0;
+				numberOfDog = 0;
+
+				for(var i=0; i<3; i++) {
+						for(var j=0; j<8; j++) {
+							eggs[i][j] = null;
+							var egg = document.getElementById("egg" + i + j);
+							egg.src = "media/img1.gif";
+							egg.style.border = "1px solid yellowgreen";
+
+						}
+					}
+
+				if(gameover != null) document.body.removeChild(gameover);
+
+				second = 11;
+				timeId = setInterval("count()", 1000);
+				alert("10초 동안 숨어있는 강아지를 기억하세요.")
+				guide.innerHTML = "10초 동안 숨어있는 강아지를 기억하세요."
+				showDog();
+			}
+
+			function count() {
+				clock.play();
+				second--;
+
+				if(second == 0 && !find) hideDog();
+				if(second == -1 && !find) {
+					second = 0;
+					clearInterval(timeId);
+					timeId = null;
+					second = 21;
+					timeId = setInterval("count()", 1000);
+					find = true;
+					alert("지금부터 숨어있는 강아지를 찾으세요.");
+					guide.innerHTML = " 지금부터 숨어있는 강아지를 찾으세요.";
+				}
+
+				if(second == 0 && find) {
+					alert("시간이 종료 되었습니다.");
+					guide.innerHTML = "시간이 종료 되었습니다."
+					clearInterval(timeId);
+					timeId = null;
+					find = false;
+					numberOfDog = 0;
+					gamming = false;
+
+					for(var i=0; i<3; i++) {
+						for(var j=0; j<8; j++) {
+							if(eggs[i][j] == "dog") {
+								var egg = document.getElementById("egg" + i + j);
+								egg.src = "media/img2.gif";
+								egg.style.border = "1px solid red";
+							}
+						}
+					}
+
+					makeGameover();
+				}
+				timer.innerHTML = "시간 : " + second;
+			}
+		</script>
+
+
+		
+		<script>
+			function over(e) {
+				e.target.style.border = "1px solid red";
+			}
+
+			function out(e) {
+				e.target.style.border = "none";
+			}
+		</script>
+
+
+		
+		<script>
+			function showDog() {
+				while(numberOfDog != 8) {
+					var ran1 = Math.floor(Math.random()*3);
+					var ran2 = Math.floor(Math.random()*8);
+					if(eggs[ran1][ran2] == null) {
+						eggs[ran1][ran2] = "dog";
+						numberOfDog++;
+						var egg = document.getElementById("egg" + ran1 + ran2);
+						egg.src = "media/img2.gif";
+					}
+				}
+			}
+
+			function hideDog() {
+				for(var i=0; i<3; i++) {
+					for(var j=0; j<8; j++) {
+						var egg = document.getElementById("egg" + i + j);
+						egg.src = "media/img1.gif";
+					}
+				}
+			}
+		</script>
+
+		
+		<script>
+			function eggCheck(e) {
+				var egg = e.target;
+				var i = egg.id.charAt(3);
+				var j = egg.id.charAt(4);
+
+				if(find && eggs[i][j] == "dog") {
+					chimes.play();
+					var egg = document.getElementById("egg" + i + j);
+						egg.src = "media/img2.gif";
+						remainsNumber--;
+						remains.innerHTML = "남은 수 : " + remainsNumber;
+						eggs[i][j] = "checked";
+				}
+
+				else if(find) {
+					bad.play();
+					failsNumber++;
+					fails.innerHTML = "실패 수 : " + failsNumber;
+				}
+
+				if(remainsNumber == 0) {
+					tada.play();
+					alert("모든 강아지를 찾았습니다!"); 
+					guide.innerHTML = "모든 강아지를 찾았습니다!"
+					clearInterval(timeId);
+					timeId = null;
+					find = false;
+					gameover = null;
+					gamming = false;
+				}
+			}
+
+			function makeGameover() {
+				gameover = document.createElement("div");
+				gameover.innerHTML = "GAME OVER";
+				gameover.style.position = "absolute";
+				gameover.style.top = "300px";
+				gameover.style.left = "440px";
+				gameover.style.fontWeight = "550";
+				gameover.style.fontSize = "50px";
+				gameover.style.color = "darkred";
+				document.body.appendChild(gameover);
+				ending.play();
+			}
+		</script>
+</body>
+</html>
