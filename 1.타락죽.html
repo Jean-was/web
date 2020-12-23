@@ -1,0 +1,107 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+<meta charset="utf-8">
+  <title>만화 요리 레시피</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+ <style>
+ 	.warning{
+ 		text-decoration-color: red;
+ 	}
+  .container {
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        margin-left : 32%;
+      }
+      #img {
+        width: 100%;
+        height: 100%;
+      }
+
+  #whole{background-color : #F2F5A9; text-align : center; 
+  		font-size : 18px;}
+
+  #title{}
+
+  #short{}
+
+  #gradient{}
+
+  #recipe{}
+  #recipe img{width: 600px; height: 400px;}
+
+ </style>
+ <script>
+    var cnt=0;
+    function nextimg() {
+    if(cnt==0)
+      document.getElementById("img").src = "media/comic/타락죽/story1.png";
+    else if(cnt==1)
+      document.getElementById("img").src = "media/comic/타락죽/story0.png";
+      cnt++;
+      if(cnt==2) cnt=0;
+    }
+  </script>
+</head>
+<body>
+ <div class="wrap">
+    <header>
+      <a href="index.html" class="logo">Cooking.</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="comic.html">comicbook</a></li> 
+          <li><a href="recipehomea.html">animation</a></li>
+          <li><a href="mainboard.html">notice</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </nav>
+    </header>
+</div>
+
+<div id="whole">
+
+<div id="title">
+<span style="font-size: 90px">타락죽</span><br><br>
+</div>
+
+<div id="short" style="font-size : 18px">
+  <span style="font-size: 60px">줄거리</span><br>
+  <div class="container">
+    <img id="img" src="media/comic/타락죽/story0.png" onclick="nextimg()" title="클릭하면 다음으로 넘어갑니다.">
+  </div>
+  <br>
+  성찬이 에드워드를 만족시킨, 조선시대 임금님 상에도 올라간 우유로 만든 죽 한번 만들어 볼까요???
+</div>
+<br><br>
+<div id="gradient">
+<span style=" font-size: 60px">재료</span><br>
+찹쌀 100g, 물 150g, 우유 300g
+</div>
+<br>
+<pre id="recipe">
+<span style=" font-size: 60px">레시피</span><br>
+<img src="media/comic/타락죽/1.png" style="margin-top:18px">
+1. 찹쌀을 씻어서 충분히 불립니다.<br>
+<img src="media/comic/타락죽/2.png" style="margin-top:18px">
+2. 불린 찹쌀을 믹서기에 넣고 갈아주세요. 되직한 타락죽을 원하면 물의 양을 적게 하세요.<br>
+<img src="media/comic/타락죽/3.png" style="margin-top:18px">
+3. 갈아놓은 찹쌀에 물을 넣고 냄비에 끓입니다.
+<strong>주의! 눌러붙지 않도록 약한 불에서 잘 저어가며 끓여주세요</strong><br>
+<img src="media/comic/타락죽/4.png" style="margin-top:18px">
+4. 찹쌀이 익으면 다시 한 번 믹서기에 갈아줍니다.<br>
+<img src="media/comic/타락죽/5.png" style="margin-top:18px">
+5. 다시 냄비에 넣고 우유를 조금씩 넣어가며 약한 불에서 끓여줍니다.<br>
+<img src="media/comic/타락죽/6.png" style="margin-top:18px">
+6. 농도가 적당하게 끓였으면 완성!<br>
+<img src="media/comic/타락죽/타락죽.png" style="margin-top:18px">
+*****완성*****
+
+
+</pre>
+
+</div>
+
+</body>
+</html>

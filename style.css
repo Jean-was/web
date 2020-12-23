@@ -1,0 +1,39 @@
+@charset"utf-8";
+
+*{margin:0; padding:0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot thead, tr, th, td{margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6{font-weight: 700; font-size: inherit;}
+a{color: inherit; text-decoration: inherit;}
+img{vertical-align:middle;}
+a mig{border:none;}
+li{list-style:none;}
+address, em, i{font-style:normal}
+
+body{font-family: 'NanumSquare', sans-serif !important; font-size:14px; color:#4e4e4e; line-height: 1.4;}
+
+.wrap{width:100%; min-width: 1100px;}
+
+header{width:100%; height:120px; line-height: 120px; padding:0px 60px; box-sizing: border-box;  top: 0; background: aliceblue;}
+header .logo{display:block; font-size:42px; font-weight: 900; letter-spacing: -6px; color:#39312b; float:left;}
+header nav{float: right;}
+header nav .menu li{display:inline-block; margin-left: 60px;}
+header nav .menu li a{display:block; font-size: 15px; text-transform: uppercase; position: relative;}
+header nav .menu li a:after{content:''; width:0%; height:1px; position:absolute; background: #888; bottom:47px; left:50%; transform: translateX(-50%); transition: all 0.5s;}
+header nav .menu li a:hover:after, header nav .menu li a:focus:after{width:100%;}
+
+.intro{color: #fff;}
+.intro .slide li{position: relative; width: 100%; height:100vh;}
+.intro .slide li img{position:relative; right:0; top:0; width:100%;}
+.intro .slide .title{position: absolute; top:35%; right: 5%; width:25%; color:#39312b; text-align: center;}
+.intro .slide .title strong{display:block; font-size:50px; margin-bottom: 7%; font-weight: 500; letter-spacing:2px;}
+.intro .slide .title > p{font-size: 20px; font-weight: normal; line-height:1.8;}
+
+footer{padding: 80px 0 0; text-align: center;}
+footer .footerlogo{font-size:40px; font-weight: 900; letter-spacing: -6px; color: #39312b; margin: 40px 0 20px;}
+footer ul li{font-size: 17px; line-height: 1.4;}
+
+.box{padding-left: 17%; padding-right: 10%;}
+.items{width:250px; text-align: center; float:left;}
+.items hr{width: 200px; margin-left:5%;}
+.items img{padding-top: 20px; padding-bottom: 20px;}
+.items .a{font-weight: bold; font-size:18px; padding-bottom:5px;}

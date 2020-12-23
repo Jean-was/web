@@ -1,0 +1,134 @@
+ <! <!DOCTYPE html>
+ <html>
+ <head>
+<meta charset="utf-8">
+  <title>만화 요리 레시피</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+ <style>
+  .warning{
+    text-decoration-color: red;
+  }
+  .container {
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        margin-left : 32%;
+      }
+      #img {
+        width: 100%;
+        height: 100%;
+      }
+
+  #whole{background-color : #F2F5A9; text-align : center; 
+      font-size : 18px;}
+
+  #title{}
+
+  #short{}
+
+  #gradient{}
+
+  #recipe{}
+  #recipe img{width: 600px; height: 400px;}
+
+ </style>
+ <script>
+    var cnt=0;
+    function nextimg() {
+      cnt++;
+    if(cnt==1)
+      document.getElementById("img").src = "media/comic/만두/story1.png";
+    else if(cnt==2)
+      document.getElementById("img").src = "media/comic/만두/story2.png";
+    else if(cnt==3)
+      document.getElementById("img").src = "media/comic/만두/story3.png";
+    else if(cnt==4)
+      document.getElementById("img").src = "media/comic/만두/story4.png";
+    else if(cnt==5)
+      document.getElementById("img").src = "media/comic/만두/story5.png";
+    else if(cnt==6)
+      document.getElementById("img").src = "media/comic/만두/story6.png";
+    else if(cnt==7) {
+      cnt=0;
+      document.getElementById("img").src = "media/comic/만두/story0.png";
+      }
+    }
+
+  </script>
+</head>
+<body>
+ <div class="wrap">
+    <header>
+      <a href="index.html" class="logo">Cooking.</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="comic.html">comicbook</a></li> 
+          <li><a href="recipehomea.html">animation</a></li>
+          <li><a href="mainboard.html">notice</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </nav>
+    </header>
+</div>
+
+<div id="whole">
+
+<div id="title">
+<span style="font-size: 90px">만두</span><br><br>
+</div>
+
+<div id="short" style="font-size : 18px">
+  <span style="font-size: 60px">줄거리</span><br>
+  <div class="container">
+    <img id="img" src="media/comic/만두/story0.png" onclick="nextimg()" title="클릭하면 다음으로 넘어갑니다.">
+  </div>
+  <br>
+  진수의 친구들과의 모임 후 틀어져 버린 진수의 마음을 녹인 성찬의 정성담긴 만두! 한 번 만들어 볼까요???
+</div>
+<br><br>
+<div id="gradient">
+<span style=" font-size: 60px">재료</span><br>
+꿩고기, 두부 한 모, 숙주나물 한 봉지, 양파 한 개, 계란 한 개, 부추 한 줌, 소금 약간, 마늘, 들기름, 유자배청(고기 잡내 제거용)
+</div>
+<br>
+<pre id="recipe">
+<span style=" font-size: 60px">레시피</span><br>
+<img src="media/comic/만두/1.png" style="margin-top:18px">
+1. 꿩고기를 준비합니다.<br>
+<img src="media/comic/만두/2.png" style="margin-top:18px">
+2. 꿩고기를 썰어서 다져줍니다.<br>
+<img src="media/comic/만두/3.png" style="margin-top:18px">
+3. 다져 놓은 꿩고기에다가 소금 약간, 들기름 약간,
+ 유자배청을 넣어주고 어느 정도 주무른 후 재워줍니다.
+<br>
+<img src="media/comic/만두/4.png" style="margin-top:18px">
+4. 두부를 으깨어서 면 보자기에 짜서 물기를 제거한다.<br>
+<img src="media/comic/만두/5.png" style="margin-top:18px">
+5. 소금 넣고 데친 숙주나물을 잘게 썰어서 
+면 보자기에 짜서 물기를 제거한다.<br>
+<img src="media/comic/만두/6.png" style="margin-top:18px">
+6. 양파도 역시 썰어서 물기를 제거한다.<br>
+<img src="media/comic/만두/7.png" style="margin-top:18px">
+7. 마지막으로 부추도 잘게 썰어 준비한다.<br>
+<img src="media/comic/만두/8.png" style="margin-top:18px">
+8. 마늘까지 더해서 만두 속 재료는 끝!<br>
+<img src="media/comic/만두/9.png" style="margin-top:18px">
+9. 재워 놓은 꿩고기에 준비해 놓은 재료를 섞어줍니다.
+<br>
+<img src="media/comic/만두/10.png" style="margin-top:18px">
+10. 만두피에 만두소를 넣어줍니다.<br>
+<img src="media/comic/만두/11.png" style="margin-top:18px">
+11. 만두도 준비 완료!
+<br>
+<img src="media/comic/만두/12.png" style="margin-top:18px">
+12. 면 보자기 위에 만두를 가지런히 놓습니다. 
+만두 위를 면 보자기로 덮어줍니다.<br>
+<img src="media/comic/만두/만두.png" style="margin-top:18px">
+*****잘 쪄주면 완성*****
+
+
+</pre>
+</div>
+</body>
+</html>

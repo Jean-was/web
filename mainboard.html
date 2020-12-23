@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+  <title>Cooking.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+  <style>
+    body{line-height:2em;}
+    ul, li{text-align:center; padding:0; margin:0;}
+    #mainWrapper{width:800px; margin:90px auto;}
+    #mainWrapper>ul>li:first-child{text-align: center; font-size: 50pt; height: 40px; vertical-align:middle; line-height:30px; padding-bottom: 30px; color:#87CEEB; }
+    #ulTable{margin-top: 10px;}
+    #ulTable>li:first-child>ul>li{background-color:#87CEEB; font-weight:bold; text-align: center;}
+    #ulTable>li>ul{clear: both; padding: 0px auto; position:relative; min-width: 40px;}
+    #ulTable>li>ul>li{float: left; font-size: 10pt; border-bottom: 1px solid silver; vertical-align: baseline;}
+    #ulTable>li>ul>li:first-child{width:10%;}
+    #ulTable>li>ul>li:first-child+li{width:45%;}
+    #ulTable>li>ul>li:first-child+li+li{width:20%;}
+    #ulTable>li>ul>li:first-child+li+li+li{width:15%;}
+    #ulTable>li>ul>li:first-child+li+li+li+li{width:10%;}
+    #divPaging{clear:both; margin:0 auto; width: 220px; height: 50px;}
+    #divPaging>div{float: left; width: 30px; margin: 0 auto; text-align: center;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a href="index.html" class="logo">Cooking.</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="comic.html">comicbook</a></li>
+          <li><a href="recipehomea.html">animation</a></li>
+          <li><a href="mainboard.html">notice</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div id="mainWrapper">
+    <ul>
+      <li>게시판</li>
+        <ul id="ulTable">
+          <li>
+            <ul>
+              <li>No</li>
+              <li>제목</li>
+              <li>작성일</li>
+              <li>작성자</li>
+              <li>조회수</li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>1</li>
+              <li>*필독*</li>
+              <li>2020.12.18</li>
+              <li>관리자</li>
+              <li>0</li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>2</li>
+              <li>게시판 이용방법</li>
+              <li>2020.12.18</li>
+              <li>관리자</li>
+              <li>0</li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>3</li>
+              <li>12월 레시피 업로드 목록</li>
+              <li>2020.12.18</li>
+              <li>관리자</li>
+              <li>0</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <div style="float: right; padding-top: 20px; padding-bottom: 20px;">
+        <button type="button" name="글쓰기" onclick="location.href='writing.html'">글쓰기</button>
+      </div>
+      <li>
+        <div id="divPaging">
+          <div>&lt;</div>
+          <div><b>1</b></div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>&gt;</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+<meta charset="utf-8">
+  <title>만화 요리 레시피</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+ <style>
+  .warning{
+    text-decoration-color: red;
+  }
+  .container {
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        margin-left : 32%;
+      }
+      #img {
+        width: 100%;
+        height: 100%;
+      }
+
+  #whole{background-color : #F2F5A9; text-align : center; 
+      font-size : 18px;}
+
+  #title{}
+
+  #short{}
+
+  #gradient{}
+
+  #recipe{}
+  #recipe img{width: 600px; height: 400px;}
+
+ </style>
+ <script>
+    var cnt=0;
+    function nextimg() {
+    if(cnt==0)
+      document.getElementById("img").src = "media/comic/제호탕/story1.png";
+    else if(cnt==1)
+      document.getElementById("img").src = "media/comic/제호탕/story0.png";
+      cnt++;
+      if(cnt==2) cnt=0;
+    }
+  </script>
+</head>
+<body>
+ <div class="wrap">
+    <header>
+      <a href="index.html" class="logo">Cooking.</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="comic.html">comicbook</a></li> 
+          <li><a href="recipehomea.html">animation</a></li>
+          <li><a href="mainboard.html">notice</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </nav>
+    </header>
+</div>
+
+<div id="whole">
+
+<div id="title">
+<span style="font-size: 90px">제호탕</span><br><br>
+</div>
+
+<div id="short" style="font-size : 18px">
+  <span style="font-size: 60px">줄거리</span><br>
+  <div class="container">
+    <img id="img" src="media/comic/제호탕/story0.png" onclick="nextimg()" title="클릭하면 다음으로 넘어갑니다.">
+  </div>
+  <br>
+  임금님이 마시면서 여름을 넘겼다는 제호탕! 한 번 만들어 볼까요???
+</div>
+<br><br>
+<div id="gradient">
+<span style=" font-size: 60px">재료</span><br>
+꿀 또는 매실청, 약재들(오매, 백단향, 사인, 초과)
+</div>
+<br>
+<pre id="recipe">
+<span style=" font-size: 60px">레시피</span><br>
+<img src="media/comic/제호탕/1.png" style="margin-top:18px">
+1. 물 1리터에 모든 재료를 넣고 끓여 준다. <br>
+<img src="media/comic/제호탕/2.png" style="margin-top:18px">
+2. 끓기 시작하면 약불로 줄여서 1시간 동안 끓여 준다.<br>
+<img src="media/comic/제호탕/3.png" style="margin-top:18px">
+3. 끓어서 줄어든 물에 매실청을 넣어 준다. 끓기 시작하면 다시 약불로 30분 동안 끓여 준다.
+<br>
+<img src="media/comic/제호탕/4.png" style="margin-top:18px">
+4. 체에 걸러서 물만 용기에 옮겨 준다.
+컵의 20%정도만 제호탕을 채우고 나머지는 물과 얼음으로 채워준다.<br>
+
+<img src="media/comic/제호탕/제호탕.png" style="margin-top:18px">
+*****완성*****
+
+
+</pre>
+
+</div>
+
+</body>
+</html>

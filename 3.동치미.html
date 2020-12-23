@@ -1,0 +1,119 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+<meta charset="utf-8">
+  <title>만화 요리 레시피</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+ <style>
+  .warning{
+    text-decoration-color: red;
+  }
+  .container {
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        margin-left : 32%;
+      }
+      #img {
+        width: 100%;
+        height: 100%;
+      }
+
+  #whole{background-color : #F2F5A9; text-align : center; 
+      font-size : 18px;}
+
+  #title{}
+
+  #short{}
+
+  #gradient{}
+
+  #recipe{}
+  #recipe img{width: 600px; height: 400px;}
+
+ </style>
+ <script>
+    var cnt=0;
+    function nextimg() {
+    if(cnt==0)
+      document.getElementById("img").src = "media/comic/동치미/story1.png";
+    else if(cnt==1)
+      document.getElementById("img").src = "media/comic/동치미/story0.png";
+      cnt++;
+      if(cnt==2) cnt=0;
+    }
+  </script>
+</head>
+<body>
+ <div class="wrap">
+    <header>
+      <a href="index.html" class="logo">Cooking.</a>
+      <nav>
+        <ul class="menu">
+          <li><a href="comic.html">comicbook</a></li> 
+          <li><a href="recipehomea.html">animation</a></li>
+          <li><a href="mainboard.html">notice</a></li>
+          <li><a href="login.html">login</a></li>
+        </ul>
+      </nav>
+    </header>
+</div>
+
+<div id="whole">
+
+<div id="title">
+<span style="font-size: 90px">동치미</span><br><br>
+</div>
+
+<div id="short" style="font-size : 18px">
+  <span style="font-size: 60px">줄거리</span><br>
+  <div class="container">
+    <img id="img" src="media/comic/동치미/story0.png" onclick="nextimg()" title="구글에 이미지가 없습니다ㅠㅠ">
+  </div>
+  <br>
+  스님을 기쁘게 해 준 고기 없는 동치미냉면의 동치미! 한 번 만들어 볼까요???
+</div>
+<br><br>
+<div id="gradient">
+<span style=" font-size: 60px">재료</span><br>
+무 7~10개, 굵은 소금, 쪽파 한 줌, 청갓 한 줌, 마늘 3통, 생강 2톨,
+<br> 사과 2개, 배 1개, 배추 1~2포기, 대파 뿌리 10대분, 삭힌 고추 10여개
+<br>
+(붉은 고추, 당근을 넣거나 색깔 내기 위해 비트도 있으면 좋다)
+</div>
+<br>
+<pre id="recipe">
+<span style=" font-size: 60px">레시피</span><br>
+<img src="media/comic/동치미/1.png" style="margin-top:18px">
+1. 무를 깨끗하게 씻는다. 껍질은 깎지 않는다.<br>
+<img src="media/comic/동치미/2.png" style="margin-top:18px">
+2. 무에 소금옷을 입힌 후 항아리에 담아서 1~2일 정도 절인다. <br>
+<img src="media/comic/동치미/3.png" style="margin-top:18px">
+3. 배추, 쪽파, 청갓을 다듬어서 소금물에 30분 이상 절여 준다.<br>
+<img src="media/comic/동치미/4.png" style="margin-top:18px">
+4. 다듬어진 마늘, 생강, 대파 뿌리를 면 보자기에 넣고 묶어서
+양념 주머니를 만들어 준다.<br>
+<img src="media/comic/동치미/5.png" style="margin-top:18px">
+5. 사과와 배를 4~8조각으로 적당하게 잘라준다. 씨도 제거한다.<br>
+<img src="media/comic/동치미/6.png" style="margin-top:18px">
+6. 이제 항아리에 재료를 담아 주기만 하면 된다!<br>
+<img src="media/comic/동치미/7.png" style="margin-top:18px">
+7. 맨 아래에 양념주머니를 넣어주고, 무 서너 개를 깔아 놓는다.
+그 위에 배추, 쪽파, 갓을 반 정도씩 차곡차곡 눌러 담는다.
+반복해서 재료를 모두 눌러 담아준다. 마지막으로 삭힌 고추를 얹는다.<br>
+<img src="media/comic/동치미/8.png" style="margin-top:18px">
+8. 물과 소금의 비율을 20대 1정도로 하여 만든 소금물을 부어 준다.
+취향에 따라서 탄산수를 넣어도 좋다.<br>
+<img src="media/comic/동치미/9.png" style="margin-top:18px">
+9. 야외에서(ex. 베란다) 일주일 정도 숙성 기간을 거친다.<br>
+<img src="media/comic/동치미/동치미.png" style="margin-top:18px">
+*****완성*****
+
+
+</pre>
+
+</div>
+
+</body>
+</html>
